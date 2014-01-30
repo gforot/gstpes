@@ -1,0 +1,43 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="GestionePeso.App.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="{Binding Path=LocalizedResources.AppTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="{Binding Path=LocalizedResources.Home, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="12,0,12,0">
+            <Button Content="{Binding Path=LocalizedResources.Insert, Source={StaticResource LocalizedStrings}}" x:Name="btnInsert" Command="{Binding InsertCommand}" />
+            <Button Content="{Binding Path=LocalizedResources.View, Source={StaticResource LocalizedStrings}}" x:Name="btnView" Command="{Binding ViewCommand}" />
+            <Button Content="{Binding Path=LocalizedResources.EditUser, Source={StaticResource LocalizedStrings}}" x:Name="btnEditUser" Command="{Binding EditUserCommand}" />
+        </StackPanel>
+        <!--ContentPanel - place additional content here-->
+        <!--<StackPanel Visibility="Collapsed" x:Name="TestPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Button Content="Save User" x:Name="btnSaveUser" Click="btnSaveUser_Click" />
+            <Button Content="Read User" x:Name="btnReadUser" Click="btnReadUser_Click" />
+            <Button Content="Save Pesate" x:Name="btnSavePesate" Click="btnSavePesate_Click" />
+            <Button Content="Read Pesate" x:Name="btnReadPesate" Click="btnReadPesate_Click" />
+        </StackPanel>-->
+    </Grid>
+ 
+</phone:PhoneApplicationPage>
